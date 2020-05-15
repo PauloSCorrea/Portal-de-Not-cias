@@ -1,5 +1,5 @@
-module.exports= function(app){
-    app.get('/admin', function (req ,res){
+module.exports= app => {
+    app.get('/admin', (req ,res) => {
         res.render('PagAdmin/add_noticia');
     });
 };

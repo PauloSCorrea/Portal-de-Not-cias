@@ -1,10 +1,10 @@
-var dbConnection = require('../../config/connection');
+module.exports= app => {
+    app.get('/noticia', (req ,res) => {
 
-module.exports= function(app){
-    var connection=dbConnection();
-    app.get('/noticias', function (req ,res){
-        connection.query('select * from noticias', function(error, result) {
-            res.render('PagNoticia/noticias',{noticia:result});
+        var connection=app.config.connection();
+
+        connection.query('select * from noticias where id_noticias = 2', (error, result) => {
+            res.render('PagNoticia/noticia',{noticia:result});
         });
     });
 };
