@@ -3,7 +3,9 @@ module.exports= app => {
 
         var connection=app.config.connection();
 
-        connection.query('select * from noticias where id_noticias = 2', (error, result) => {
+        var noticiasModel = app.app.models.noticiasModel;
+
+        noticiasModel.getNoticia(connection, (error, result) => {
             res.render('PagNoticia/noticia',{noticia:result});
         });
     });
