@@ -1,6 +1,6 @@
-var mysql = require("mysql");
+var mysql = require("mysql");       // Requerimos o "mysql"
 
-conneMysql = () => {
+conneMysql = () => {                // Criamos uma função com as configurações do BD
         return mysql.createConnection({
             host: 'localhost',
             user: 'root',
@@ -9,6 +9,6 @@ conneMysql = () => {
         });
     };
 
-module.exports = () =>{
+module.exports = () =>{    //exportamos todo o modulo de conexão
     return conneMysql;    
 };
